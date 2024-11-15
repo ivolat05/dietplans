@@ -1,0 +1,69 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 130%;
+}
+
+a {
+	text-decoration: none;
+	transition: .4s;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background: none;
+	padding: 0;
+	transition: .4s;
+}
+
+html {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	scrollbar-gutter: stable;
+
+	&._fixed {
+		overflow: hidden;
+	}
+
+}
+
+.page {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+	overflow: hidden;
+}
+
+
+/* убираем тени safari */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+
+.container {
+	width: 100%;
+	max-width: 100%;
+
+}
+
+time {
+	display: block;
+}
+
+body {
+	background: #E9ECDD;
+}

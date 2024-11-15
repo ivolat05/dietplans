@@ -1,0 +1,2 @@
+--include('vendor/swiper-bundle.min.js')
+--include('components/modal.js')

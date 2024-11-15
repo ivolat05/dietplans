@@ -1,0 +1,14 @@
+// root
+:root {
+	--index: calc(1vw + 1vh);
+}
+
+// media
+$macbook: "max-width: 1680px";
+$notebook: "max-width: 1440px";
+$laptop: "max-width: 1240px";
+$tablet: "max-width: 992px";
+$min-tablet: "min-width: 992px";
+$mobile: "max-width: 767px";
+
+// color
