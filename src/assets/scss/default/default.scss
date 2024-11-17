@@ -55,8 +55,11 @@ select {
 
 
 .container {
-	width: 100%;
-	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1280px;
+	padding-left: 15px;
+	padding-right: 15px;
 
 }
 
@@ -66,4 +69,35 @@ time {
 
 body {
 	background: #E9ECDD;
+}
+
+.triangle {
+	background: #515A3A;
+	border-radius: 777px;
+	position: relative;
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: #515A3A;
+		mask-image: url('../../assets/img/btn-back.svg');
+		mask-size: 100% 100%;
+		mask-repeat: no-repeat;
+		mask-position: center center;
+		z-index: -1;
+
+	}
+
+	&::after {
+		top: -5px;
+	}
+
+	&::before {
+		top: 5px;
+	}
 }
