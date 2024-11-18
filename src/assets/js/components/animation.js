@@ -1,9 +1,10 @@
 const paralaxAnimBloclk = document.querySelectorAll(".anim-block-1");
 const paralaxAnimBloclkTwo = document.querySelectorAll(".anim-block-2");
+const paralaxAnimBloclkThree = document.querySelectorAll(".anim-block-3");
 
 paralaxAnimation(paralaxAnimBloclk, 0.01, 1, -1);
 paralaxAnimation(paralaxAnimBloclkTwo, 0.01, -1, -1);
-
+paralaxAnimation(paralaxAnimBloclkThree, 0.001, -1, 1);
 /**
  * Анимация параллакса для элементов на странице с использованием GSAP.
  *

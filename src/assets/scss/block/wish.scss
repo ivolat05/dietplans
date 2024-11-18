@@ -1,0 +1,171 @@
+.wish__list-text {
+
+
+	font-family: 'Ysabeau';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 19px;
+	line-height: 24px;
+
+	color: #191F09;
+
+
+}
+
+.wish__list-inner {
+	display: grid;
+	grid-template-columns: 60px auto;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px;
+	position: relative;
+
+	img,
+	svg {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		height: 70px;
+		object-fit: contain;
+	}
+
+	@media(max-width:792px) {
+		position: static;
+	}
+}
+
+.wish__list-inner+.wish__list-inner {
+	margin-top: 70px;
+
+	@media(max-width:792px) {
+		margin-top: 15px;
+	}
+}
+
+.wish__list-inner-1 {
+	left: 127px;
+}
+
+.wish__list+.wish__list {
+	@media(max-width:640px) {
+		margin-top: 20px;
+	}
+}
+
+.wish__list-inner+.wish__list-inner-3 {
+	left: 37px;
+	margin-top: 86px;
+
+	.wish__list-text {
+		width: 130px;
+
+		@media(max-width:640px) {
+			width: 100%;
+		}
+	}
+
+	@media(max-width:880px) {
+		left: 15px;
+	}
+
+	@media(max-width:792px) {
+		margin-top: 20px;
+	}
+}
+
+
+
+.wish__list-inner-4 {
+	left: -25px;
+}
+
+.wish__list-inner-5 {
+	left: -68px;
+
+	span {
+		display: block;
+
+		@media(max-width:640px) {
+			display: inline;
+		}
+	}
+
+	@media(max-width:880px) {
+		left: -35px;
+	}
+}
+
+.wish__list-inner+.wish__list-inner-6 {
+	left: 24px;
+	margin-top: 75px;
+
+	.wish__list-text {
+		max-width: 140px;
+
+		@media(max-width:640px) {
+			max-width: 100%;
+		}
+	}
+
+	span {
+		display: block;
+
+		@media(max-width:640px) {
+			display: inline;
+		}
+	}
+
+	@media(max-width:792px) {
+		margin-top: 23px;
+	}
+}
+
+
+.wish__row {
+	display: grid;
+	grid-template-columns: 255px 255px;
+	justify-content: space-between;
+	position: relative;
+	max-width: 905px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 78px;
+
+	@media(max-width:792px) {
+		grid-template-columns: 1fr 1fr;
+		padding-left: 24px;
+		padding-right: 45px;
+		gap: 20px;
+		padding-bottom: 60px;
+
+	}
+
+	@media(max-width:640px) {
+		display: block;
+	}
+
+	@media(max-width:355px) {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.wish__row-img {
+	position: absolute;
+	bottom: -112px;
+	left: 50%;
+	transform: translateX(-46%);
+	z-index: -1;
+
+	@media(max-width:792px) {
+		display: none;
+	}
+}
+
+.wish {
+	padding-top: 105px;
+
+	@media(max-width:792px) {
+		padding-top: 33px;
+	}
+}

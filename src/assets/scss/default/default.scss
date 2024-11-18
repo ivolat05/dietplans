@@ -24,16 +24,7 @@ button {
 	transition: .4s;
 }
 
-html {
-	overflow-x: hidden;
-	overflow-y: scroll;
-	scrollbar-gutter: stable;
 
-	&._fixed {
-		overflow: hidden;
-	}
-
-}
 
 .page {
 	display: flex;
