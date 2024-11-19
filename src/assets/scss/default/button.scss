@@ -1,0 +1,54 @@
+.btn {
+	width: 283px;
+	height: 77px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: #CD5052;
+	border-radius: 777px;
+
+	font-family: 'Ysabeau';
+	font-style: normal;
+	font-weight: 800;
+	font-size: 17px;
+	line-height: 42px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: #FFFFFF;
+	position: relative;
+	flex-shrink: 0;
+
+	&::after {
+		content: "";
+		width: 145px;
+		height: 100px;
+		position: absolute;
+		background: url("../../assets/img/main/drop.png") no-repeat center center/contain;
+		left: 0;
+		top: 50%;
+		transform: translate(-35px, -50%);
+	}
+
+	@media(max-width:792px) {
+		font-size: 17px;
+	}
+}
+
+.btn-hover-black {
+	transition: .4s;
+
+	@media(hover:hover) {
+		&:hover {
+			background: #141315;
+		}
+	}
+
+	@media(hover:none) {
+		&:active {
+			background: #141315;
+		}
+	}
+}
