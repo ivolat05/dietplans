@@ -106,7 +106,7 @@
 .main__coll-wrapp {
 	position: relative;
 	margin-top: 70px;
-	background: url("../../assets/img/line.png") no-repeat center right/cover, rgba(81, 90, 58, 0.09);
+	background: rgba(81, 90, 58, 0.09);
 	border-radius: 15px;
 	padding: 50px 0 50px 180px;
 	display: grid;
@@ -115,6 +115,27 @@
 
 	align-items: flex-start;
 	gap: 0 10px;
+
+	&::after {
+		content: "";
+		background: url("../../assets/img/line.png") no-repeat top right/cover;
+		width: 709px;
+		height: 350px;
+		position: absolute;
+		right: -10px;
+		top: 0;
+		transform: rotate(-10deg);
+		z-index: -1;
+		opacity: .7;
+
+		@media(max-width:792px) {
+			width: 100%;
+			height: 150px;
+			right: auto;
+			left: 50%;
+			transform: translateX(-50%) rotate(-10deg);
+		}
+	}
 
 	@media(max-width:792px) {
 		display: block;
@@ -421,14 +442,14 @@
 
 .main__btn-text {
 	&::after {
-		opacity: .6;
+		opacity: .4;
 		content: "";
 		width: 100%;
 		height: 100%;
 		position: absolute;
 		left: 0;
 		top: 0;
-		background: url('../../assets/img/test.svg') no-repeat center center/cover;
+		background: url('../../assets/img/btn-back-line.svg') no-repeat center center/cover;
 		border-radius: 777px;
 	}
 

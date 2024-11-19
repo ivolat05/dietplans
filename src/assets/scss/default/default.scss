@@ -92,3 +92,97 @@ body {
 		top: 5px;
 	}
 }
+
+.label {
+	position: relative;
+}
+
+.label-input {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -111;
+	width: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.label-span {
+	position: relative;
+	padding-left: 45px;
+
+	font-family: 'Ysabeau';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 27px;
+
+	color: #2F3128;
+
+	filter: grayscale(1);
+	opacity: .7;
+	transition: .4s;
+	cursor: pointer;
+
+	&::after {
+		content: "";
+		width: 34px;
+		height: 34px;
+		left: 0;
+		top: 0;
+		position: absolute;
+		background: url("../../assets/img/check.svg") no-repeat center center/contain;
+	}
+
+	@media(hover:hover) {
+		&:hover {
+			color: #2F3029;
+			opacity: 1;
+			filter: grayscale(1);
+		}
+	}
+
+	@media(hover:none) {
+		&:active {
+			color: #2F3029;
+			opacity: 1;
+			filter: grayscale(1);
+		}
+	}
+}
+
+input:checked~.label-span {
+	opacity: 1;
+	filter: grayscale(0);
+
+	@media(hover:hover) {
+		&:hover {
+			color: #2F3029;
+			opacity: 1;
+			filter: grayscale(1);
+		}
+	}
+
+	@media(hover:none) {
+		&:active {
+			color: #2F3029;
+			opacity: 1;
+			filter: grayscale(1);
+		}
+	}
+}
+
+.back-line {
+	width: 10vw;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: -1;
+
+	filter: grayscale(1);
+
+	@media(max-width:992px) {
+		display: none;
+	}
+}

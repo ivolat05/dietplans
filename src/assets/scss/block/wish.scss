@@ -181,6 +181,7 @@
 	justify-content: space-between;
 	padding: 27px 44px 38px 170px;
 	gap: 15px;
+	isolation: isolate;
 
 	@media(max-width:1220px) {
 		padding-right: 15px;
@@ -190,6 +191,28 @@
 	@media(max-width:992px) {
 		display: block;
 		padding: 85px 20px 20px 20px;
+	}
+
+
+
+	&::after {
+		content: "";
+		background: url("../../assets/img/line.png") no-repeat top right / cover;
+		width: 455px;
+		height: 150px;
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		transform: rotate(-10deg);
+		z-index: -1;
+		opacity: .8;
+
+		@media(max-width:992px) {
+			width: 100%;
+			left: 50%;
+			transform: translateX(-50%) rotate(-10deg);
+		}
 	}
 }
 
@@ -263,5 +286,37 @@
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 25px;
+	}
+}
+
+.wish {
+	position: relative;
+
+}
+
+.wish-back-img {
+	width: 11vw;
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	top: 50%;
+	transform: translateY(-28%);
+	filter: grayscale(1);
+}
+
+.wish-back-img-2 {
+	width: 533px;
+	position: absolute;
+	z-index: 0;
+	left: 50%;
+	top: 50%;
+	transform: translate(-117%, -57%);
+	mix-blend-mode: color-dodge;
+
+}
+
+@media(max-width:992px) {
+	.wish-back-img {
+		display: none;
 	}
 }

@@ -52,3 +52,35 @@
 		}
 	}
 }
+
+.swiper-btn {
+	cursor: pointer;
+
+	path {
+		transition: .4s;
+	}
+
+	@media(hover:hover) {
+		&:hover {
+			.svg-back {
+				fill: #E9ECDD;
+			}
+
+			.svg-back-line {
+				fill: #231F20;
+			}
+		}
+	}
+
+	@media(hover:none) {
+		&:active {
+			.svg-back {
+				fill: #E9ECDD;
+			}
+
+			.svg-back-line {
+				fill: #231F20;
+			}
+		}
+	}
+}
