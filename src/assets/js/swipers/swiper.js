@@ -6,9 +6,9 @@ const fastingSwiperConfig = {
 		nextEl: ".fasting__slide-next",
 		prevEl: ".fasting__slide-prev",
 	},
-	//autoplay: {
-	//delay: 5000,
-	//},
+	autoplay: {
+		delay: 3000,
+	},
 	breakpoints: {
 		320: {
 			slidesPerView: 1,
@@ -21,6 +21,35 @@ const fastingSwiperConfig = {
 		1200: {
 			slidesPerView: 3,
 			spaceBetween: 40,
+		},
+	},
+};
+
+const reviewsSwiper = document.querySelector(".reviews-swiper");
+const reviewsSwiperConfig = {
+	slidesPerView: 4,
+	spaceBetween: 10,
+	navigation: {
+		nextEl: ".reviews__slide-next",
+		prevEl: ".reviews__slide-prev",
+	},
+
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 40,
+		},
+		660: {
+			slidesPerView: 2,
+			spaceBetween: 60,
+		},
+		998: {
+			slidesPerView: 3,
+			spaceBetween: 60,
+		},
+		1300: {
+			slidesPerView: 4,
+			spaceBetween: 60,
 		},
 	},
 };
@@ -40,3 +69,4 @@ function swiperInstal(swiperElement, config) {
 	}
 }
 swiperInstal(fastingSwiper, fastingSwiperConfig);
+swiperInstal(reviewsSwiper, reviewsSwiperConfig);

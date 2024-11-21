@@ -5,5 +5,9 @@
 --include('components/modal.js')
 --include('components/animation.js')
 --include('components/video.js')
+--include('components/accordion.js')
+--include('components/counter.js')
+--include('components/timer.js')
+
 --include("swipers/swiper.js")
 

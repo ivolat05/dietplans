@@ -12,11 +12,83 @@
 			@@include("../html/index/solution.html")
 			@@include("../html/index/wish.html")
 			@@include("../html/index/fasting.html")
+			@@include("../html/index/diet.html")
+			@@include("../html/index/questions.html")
+			@@include("../html/index/reviews.html")
+			@@include("../html/index/access.html")
+
 		</main>
 		@@include("../html/footer/footer.html")
 	</div>
+	<div id="reviews-modal" class=" modal__container-fon modal-background">
+		<div class="modal__container reviews-modal-container">
+			<button class="modal-btn reviews-modal-close btn__modal--close">
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M19 1L1 19" stroke="#ADAEB7" stroke-width="1.5" stroke-linecap="round"
+						stroke-linejoin="round" />
+					<path d="M19 19L1 1" stroke="#ADAEB7" stroke-width="1.5" stroke-linecap="round"
+						stroke-linejoin="round" />
+				</svg>
+			</button>
+			<div class="reviews-modal-img">
+				<img src="assets/img/reviews/reviews-3.png" alt="">
+			</div>
+			<div class="reviews-modal-coll">
+				<h3 class="reviews-modal-title">
+					Эльмира, <span>25 лет</span>
+				</h3>
+				<p class="reviews-modal-text">
+					Очень вкусные рецепты и потрясающая подача. И готовить, и есть - одно удовольствие. У меня не было
+					цели прям сбросить вес. Скорее просто улучшить состояние тела. Знаете, вышло даже лучше, чем я
+					ожидала.
+				</p>
+			</div>
 
+		</div>
+	</div>
+	<div id="modal" class="  modal__container-fon modal-background">
+		<div class="modal__container access__modal">
+			<button class="modal-btn reviews-modal-close btn__modal--close">
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M19 1L1 19" stroke="#ADAEB7" stroke-width="1.5" stroke-linecap="round"
+						stroke-linejoin="round" />
+					<path d="M19 19L1 1" stroke="#ADAEB7" stroke-width="1.5" stroke-linecap="round"
+						stroke-linejoin="round" />
+				</svg>
+			</button>
+
+			<h3 class="access__modal-title">
+				заголовк
+			</h3>
+
+			<ul class="access__modal-list">
+				<li class="access__modal-inner">
+					<a href="#" target="_blank">
+						Документы
+					</a>
+				</li>
+				<li class="access__modal-inner">
+					<a href="#" target="_blank">
+						Публичная оферта
+					</a>
+				</li>
+				<li class="access__modal-inner">
+					<a href="#" target="_blank">
+						Согласние на обработку персональных данных
+					</a>
+				</li>
+				<li class="access__modal-inner">
+					<a href="#" target="_blank">
+						Положение об безопасности персональных данных
+					</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
 	<script src="./assets/js/app.min.js"></script>
+
+
 </body>
 
 </html>

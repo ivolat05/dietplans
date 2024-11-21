@@ -49,3 +49,19 @@ function paralaxAnimation(
 		});
 	}
 }
+
+// анимация стрелки часов
+const trigerBlock = document.querySelector(".fasting-bottom ");
+const arrowClock = document.querySelector(".fasting-svg-arrow");
+if (trigerBlock && arrowClock) {
+	gsap.to(".fasting-svg-arrow", {
+		transformOrigin: "bottom right",
+		rotation: -100,
+		duration: 4,
+
+		scrollTrigger: {
+			trigger: trigerBlock,
+			start: "top center",
+		},
+	});
+}

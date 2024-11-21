@@ -1,7 +1,9 @@
 function modalOpen(btnClick) {
 	let dataAtr = btnClick.getAttribute("data-open-modal");
 	let idBox = document.getElementById(dataAtr);
-	idBox.classList.add("--active");
+	if (idBox) {
+		idBox.classList.add("--active");
+	}
 }
 
 function htmlRootLock(htmlRoot) {
@@ -27,7 +29,8 @@ function openModalWindow() {
 		const btnClose = document.querySelectorAll(".btn__modal--close");
 
 		btn.forEach((item) => {
-			item.addEventListener("click", () => {
+			item.addEventListener("click", (e) => {
+				e.preventDefault();
 				htmlRootLock(htmlRoot);
 				modalCloseWindow(modalBacground);
 				modalOpen(item);
