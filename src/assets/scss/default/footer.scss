@@ -1,0 +1,340 @@
+.footer-body {
+	padding-top: 39px;
+	margin-left: auto;
+	margin-right: 0;
+	padding-left: 220px;
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 24px;
+
+	color: #84867D;
+
+	@media(max-width:1250px) {
+		padding-left: 155px;
+	}
+
+	@media(max-width:992px) {
+		padding-left: 0;
+	}
+
+	@media(max-width:792px) {
+		padding-top: 25px;
+	}
+}
+
+
+.footer__cart-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 70px;
+	height: 30px;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		flex-shrink: 0;
+	}
+}
+
+.footer__cart-inner {
+	flex-shrink: 0;
+}
+
+
+.footer__cart-list {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+
+	@media(max-width:990px) {
+		justify-content: flex-start;
+		margin-top: 20px;
+	}
+
+}
+
+.footer__list-inner+.footer__list-inner {
+	@media(max-width:990px) {
+		margin-top: 5px;
+	}
+}
+
+.footer__list-link {
+
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 23px;
+	text-transform: uppercase;
+	color: #595C4E;
+	transition: .4s;
+
+	@media(hover:hover) {
+		&:hover {
+			color: #141315;
+		}
+	}
+
+	@media(hover:none) {
+		&:active {
+			color: #141315;
+		}
+	}
+}
+
+
+.footer-top-text {
+	max-width: 588px;
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 31px;
+	color: #9E9F97;
+
+	@media(max-width:792px) {
+		font-size: 14px;
+		line-height: 26px;
+		padding-top: 15px;
+	}
+}
+
+
+
+.footer__contacts-inner {
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 29px;
+	color: #393A32;
+
+	@media(max-width:792px) {
+		font-size: 14px;
+		line-height: 26px;
+	}
+
+	a {
+		font-family: inherit;
+		font-style: inherit;
+		font-weight: 400;
+		font-size: inherit;
+		line-height: inherit;
+		text-decoration-line: underline;
+		color: #CD5052;
+
+		@media(hover:hover) {
+			&:hover {
+				color: #141315;
+			}
+		}
+
+		@media(hover:none) {
+			&:active {
+				color: #141315;
+			}
+		}
+	}
+}
+
+.footer__contacts--copyright {
+
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-transform: uppercase;
+	color: #393A32;
+	padding-bottom: 15px;
+
+	@media(max-width:792px) {
+		font-size: 15px;
+		line-height: 23px;
+		padding-bottom: 7px;
+	}
+}
+
+
+.footer {
+	margin-top: 95px;
+	margin-bottom: 65px;
+	position: relative;
+
+	@media(max-width:792px) {
+		margin-top: 37px;
+		margin-bottom: 22px;
+	}
+}
+
+.footer-top {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 40px;
+	gap: 20px;
+
+	@media(max-width:792px) {
+		display: block;
+		padding-top: 29px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 26px;
+		height: 5px;
+		background: #53593F;
+
+		@media(max-width:792px) {
+			width: 0;
+			background: none;
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: calc(100% - 44px);
+		height: 5px;
+		background: #B0B69C;
+
+		@media(max-width:792px) {
+			width: 100%;
+		}
+	}
+}
+
+.footer-contacts-list {
+	padding-left: 65px;
+	position: relative;
+	flex-shrink: 0;
+
+	@media(max-width:800px) {
+		padding-left: 0;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 36px;
+		height: 56px;
+		background: url("../../assets/img/footer/logo.svg") no-repeat center center/contain;
+
+
+		mix-blend-mode: luminosity;
+		opacity: 0.5;
+
+		@media(max-width:800px) {
+			background: none;
+			width: 0;
+		}
+	}
+}
+
+.footer-list {
+	display: flex;
+	justify-content: flex-start;
+	gap: 28px;
+
+	@media(max-width:1300px) {
+		gap: 15px;
+	}
+
+	@media(max-width:990px) {
+		display: block;
+	}
+}
+
+
+.footer-center {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 32px 20px 155px;
+	margin-left: 63px;
+	background: rgba(200, 205, 184, .25);
+
+	border-radius: 7px;
+	margin-top: 38px;
+	position: relative;
+
+	@media(max-width:1250px) {
+		padding-left: 90px;
+	}
+
+	@media(max-width:1120px) {
+		padding-left: 30px;
+	}
+
+	@media(max-width:1050px) {
+		margin-left: 0;
+	}
+
+	@media(max-width:990px) {
+		padding: 20px 30px;
+		display: block;
+	}
+
+	@media(max-width:792px) {
+		margin-top: 25px;
+	}
+
+
+}
+
+
+.footer-center-back {
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translateX(-46%);
+	width: 250px;
+	height: 250px;
+	object-fit: contain;
+
+	@media(max-width:1250px) {
+		width: 150px;
+		height: 150px;
+	}
+
+	@media(max-width:1120px) {
+		top: 90%;
+	}
+
+	@media(max-width:1150px) {
+		transform: translateX(0);
+	}
+
+	@media(max-width:992px) {
+		display: none;
+	}
+}
+
+
+.footer-bakc-img {
+	position: absolute;
+	right: -5vw;
+	z-index: -1;
+	bottom: 0;
+	width: 21vw;
+
+	@media(max-width:1450px) {
+		opacity: .7;
+	}
+
+	@media(max-width:998px) {
+		display: none;
+	}
+}

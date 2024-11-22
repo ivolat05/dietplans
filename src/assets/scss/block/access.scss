@@ -187,7 +187,7 @@
 	gap: 20px;
 	background: rgba(81, 90, 58, 0.09);
 	border-radius: 15px;
-	align-items: flex-end;
+	align-items: flex-start;
 	padding: 45px 49px 45px 36px;
 
 	@media(max-width:1200px) {
@@ -207,6 +207,14 @@
 
 .access__form-top-coll {
 	position: relative;
+	min-height: 78px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	@media(max-width:998px) {
+		min-height: 0;
+	}
 }
 
 .access__form-price {
@@ -214,7 +222,7 @@
 	position: absolute;
 	left: 45%;
 	top: -13px;
-	transform: translate(-50%, -100%);
+	transform: translate(-50%, -50%);
 
 	@media(max-width:998px) {
 		left: 50%;
@@ -325,50 +333,58 @@
 		}
 	}
 
-	input {
-		padding: 24px 60px 24px 30px;
-		background: #FDFFF4;
-		border: 1px solid #E8DED6;
-		border-radius: 9px;
+
+	padding: 24px 60px 24px 30px;
+	background: #FDFFF4;
+	border: 1px solid #E8DED6;
+	border-radius: 9px;
+	font-family: 'Ysabeau';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 28px;
+	color: #252C15;
+	width: 100%;
+	min-height: 78px;
+	outline: none;
+
+	@media(max-width:792px) {
+		padding: 17px 60px 17px 25px;
+		min-height: 65px;
+	}
+
+	&::placeholder {
 		font-family: 'Ysabeau';
 		font-style: normal;
 		font-weight: 400;
 		font-size: 20px;
 		line-height: 28px;
 		color: #252C15;
-		width: 100%;
-		min-height: 78px;
-		outline: none;
+	}
 
-		@media(max-width:792px) {
-			padding: 17px 60px 17px 25px;
-			min-height: 65px;
+	@media(hover:hover) {
+
+		&:hover,
+		&:focus {
+			box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.07);
 		}
+	}
 
-		&::placeholder {
-			font-family: 'Ysabeau';
-			font-style: normal;
-			font-weight: 400;
-			font-size: 20px;
-			line-height: 28px;
-			color: #252C15;
+	@media(hover:none) {
+
+		&:active,
+		&:focus {
+			box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.07);
 		}
+	}
+}
 
-		@media(hover:hover) {
+.access-input-email {
+	background: url("../../assets/img/email.svg") no-repeat center right 25px/contain, #FDFFF4;
+	background-size: 32px 32px;
 
-			&:hover,
-			&:focus {
-				box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.07);
-			}
-		}
-
-		@media(hover:none) {
-
-			&:active,
-			&:focus {
-				box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.07);
-			}
-		}
+	@media(max-width:792px) {
+		background: url("../../assets/img/email.svg") no-repeat center right 15px/contain, #FDFFF4;
 	}
 }
 
@@ -505,5 +521,61 @@
 
 	@media(max-width:360px) {
 		width: 100%;
+	}
+}
+
+.just-validate-error-field {
+	border-color: rgb(184, 17, 17);
+}
+
+.just-validate-error-label {
+	padding-left: 5px;
+	font-family: "Ysabeau";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 23px;
+
+}
+
+.label+.just-validate-error-label {
+	padding-top: 5px;
+	padding-left: 45px;
+}
+
+
+.label-input.just-validate-error-field~.label-span {
+	filter: grayscale(0);
+	color: #8D9082;
+
+	&::after {
+		filter: grayscale(1);
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 34px;
+		height: 34px;
+		z-index: 1;
+		background: rgba(184, 17, 17, .8);
+		border-radius: 50%;
+		animation: pulse-animation 1.5s infinite ease-in-out;
+	}
+}
+
+@keyframes pulse-animation {
+
+	0%,
+	100% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	50% {
+		transform: scale(1.2);
+		opacity: 0.6;
 	}
 }

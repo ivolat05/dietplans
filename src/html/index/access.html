@@ -1,4 +1,4 @@
-<section class="access">
+<section id="access" class="access">
 	<img class="access__img-back anim-block-1" src="assets/img/grass-2.png" alt="">
 	<div class="container">
 		<div class="access__top">
@@ -32,7 +32,7 @@
 			</div>
 		</div>
 
-		<form action="" class="access__form">
+		<form id="#form-access" action="" class="access__form">
 			<div class="access__form-top">
 				<div class="access__form-top-coll">
 					<div class="access__form-price main__price">
@@ -49,10 +49,9 @@
 				</div>
 				<ul class="access__form-top-list">
 					<li class="access__form-top-inner">
-						<label class="access-input">
-							<input type="email" name="email" placeholder="Ваш e-mail" required>
-							<img src="assets/img/email.svg" alt="">
-						</label>
+						<input id="email" class="access-input access-input-email" type="email" name="email"
+							placeholder="Ваш e-mail">
+
 					</li>
 				</ul>
 				<div class="access__form-top-footer">
@@ -67,7 +66,7 @@
 				<ul class="access__form-list">
 					<li class="access__form-inner">
 						<label class="access__form-label  label">
-							<input type="checkbox" name="" class="access__form-label-input label-input">
+							<input id="checkbox-1" type="checkbox" name="" class="access__form-label-input label-input">
 							<span class=" access__form-label-span label-span">
 								Ознакомлен с <a href="#">офертой</a> и <a href="#">тарифами</a> , даю согласие на
 								обработку <a href="#" data-open-modal="modal">персональных данных</a>
@@ -76,7 +75,7 @@
 					</li>
 					<li class="access__form-inner">
 						<label class="access__form-label  label">
-							<input type="checkbox" name="" class="access__form-label-input label-input">
+							<input id="checkbox-2" type="checkbox" name="" class="access__form-label-input label-input">
 							<span class=" access__form-label-span label-span">
 								Ознакомлен с медицинскими противопоказаниями
 							</span>

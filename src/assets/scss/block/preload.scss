@@ -1,0 +1,38 @@
+.preload {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 333333;
+	background: #E3EBCF;
+	transition: 3s;
+	opacity: 1;
+}
+
+.preload_fixed {
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+.preload.--active {
+	opacity: 0;
+}
+
+.preload-img {
+	transition: .4s;
+	animation: preload-spin 2s linear infinite;
+}
+
+@keyframes preload-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

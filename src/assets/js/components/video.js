@@ -4,6 +4,7 @@ fsLightbox.props.onOpen = function () {
 		if (video.muted) {
 			video.muted = false;
 		}
+
 		video.play();
 	}
 };
