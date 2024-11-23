@@ -253,3 +253,13 @@
 		padding: 30px 20px 10px 20px;
 	}
 }
+
+.soluton__wrapp {
+	transform: translateX(-100%);
+	opacity: 0;
+}
+
+.solution__list-container {
+	transform: translateX(100%);
+	opacity: 0;
+}

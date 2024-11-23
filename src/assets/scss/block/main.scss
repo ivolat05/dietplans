@@ -628,3 +628,8 @@
 		grid-template-columns: 100%;
 	}
 }
+
+.main__row-box {
+	opacity: 0;
+	transform: translateY(-100%);
+}

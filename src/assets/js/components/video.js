@@ -1,5 +1,6 @@
 fsLightbox.props.onOpen = function () {
 	const video = document.querySelector(".fslightbox-container video");
+	console.log(video);
 	if (video) {
 		if (video.muted) {
 			video.muted = false;

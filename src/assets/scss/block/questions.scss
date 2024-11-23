@@ -78,3 +78,13 @@
 		margin-top: 25px;
 	}
 }
+
+.questions-title {
+	opacity: 0;
+	transform: translateY(100%);
+}
+
+.questions__accordion {
+	opacity: 0;
+	transform: translateY(100%);
+}
