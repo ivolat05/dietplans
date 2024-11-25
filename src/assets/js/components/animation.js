@@ -274,3 +274,46 @@ if (trigerReviews && reviewsAnimate) {
 		},
 	});
 }
+
+// Анимация для чисел
+const animateNumbers = (element, target) => {
+	gsap.to(element, {
+		innerText: target,
+		duration: 1.5,
+		ease: "power1.out",
+		snap: { innerText: 1 }, // Округляем до целых чисел
+		onUpdate: function () {
+			element.textContent = Math.floor(element.innerText);
+		},
+	});
+};
+
+// Анимация для прогресс-бара
+const progressBars = document.querySelectorAll(".progress-item");
+if (progressBars) {
+	progressBars.forEach((item) => {
+		const numberElement = item.querySelector(".progress-number");
+		const progressFill = item.querySelector(".progress-fill");
+		const targetValue = parseInt(
+			numberElement.getAttribute("data-target"),
+			10
+		);
+		const fillPercent = targetValue === 16 ? "80%" : "40%"; // Устанавливаем ширину вручную
+
+		ScrollTrigger.create({
+			trigger: item,
+			start: "top 80%",
+			onEnter: () => {
+				// Анимация заполнения чисел
+				animateNumbers(numberElement, targetValue);
+
+				// Анимация заполнения прогресс-бара
+				gsap.to(progressFill, {
+					width: fillPercent,
+					duration: 1.5,
+					ease: "power1.out",
+				});
+			},
+		});
+	});
+}

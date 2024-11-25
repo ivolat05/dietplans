@@ -1,0 +1,309 @@
+.weight {
+	margin-top: 30px;
+
+	@media(max-width:792px) {
+		margin-top: 20px;
+	}
+}
+
+.weight-title {
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 35px;
+	color: #252C15;
+	padding-right: 20px;
+
+	span {
+		color: #7CAD1E;
+	}
+
+	@media(max-width:930px) {
+		text-align: center;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-right: 0;
+	}
+
+	@media(max-width:792px) {
+		font-size: 20px;
+		line-height: 28px;
+		padding-right: 0;
+	}
+}
+
+.weight-counter-text {
+	max-width: 300px;
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 17px;
+	line-height: 25px;
+
+	color: #191F09;
+
+	@media(max-width:930px) {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10px;
+		max-width: 400px;
+	}
+
+	@media(max-width:792px) {
+
+
+		font-family: 'Geologica';
+		font-style: normal;
+		font-weight: 300;
+		font-size: 17px;
+		line-height: 25px;
+		text-align: center;
+
+		color: #191F09;
+
+
+	}
+
+
+}
+
+.weight-result-text {
+
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 22px;
+
+	color: #3C3E44;
+}
+
+.weight-result-img {
+	width: 52px;
+	object-fit: contain;
+	margin-right: 20px;
+	flex-shrink: 0;
+}
+
+.weight-scales {
+	grid-area: weight-scales;
+	margin-top: auto;
+	margin-bottom: 0;
+
+	@media(max-width:930px) {
+		background: #F5F6EF;
+		padding-left: 15px;
+		padding-right: 15px;
+		border-radius: 0 0 15px 15px;
+	}
+}
+
+.weight-scales-clock {
+	@media(max-width:930px) {
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.weight-wrapp-head {
+	grid-area: weight-wrapp-head;
+
+	@media(max-width:930px) {
+		border-radius: 15px 15px 0 0;
+		padding: 23px 25px;
+		background: #F5F6EF;
+	}
+}
+
+.weight-wrapp {
+	display: grid;
+	grid-template-columns: 300px 1fr auto;
+	grid-template-rows: auto 1fr;
+	grid-template-areas:
+		"weight-scales weight-wrapp-head weight-btn "
+		"weight-scales  weight-counter-row weight-result"
+	;
+	background: #F5F6EF;
+	border-radius: 15px;
+	padding-left: 35px;
+	padding-right: 55px;
+	padding-top: 40px;
+	gap: 0 35px;
+
+	@media(max-width:1270px) {
+		padding-left: 20px;
+		padding-right: 20px;
+		gap: 0 20px;
+	}
+
+	@media(max-width:1080px) {
+		grid-template-columns: 190px 1fr auto;
+		gap: 0 10px;
+	}
+
+	@media(max-width:930px) {
+		display: block;
+		background: none;
+		padding: 0;
+	}
+}
+
+.weight-btn {
+	width: 220px;
+	height: 62px;
+	grid-area: weight-btn;
+	font-size: 15px;
+	margin-top: 7px;
+
+	@media(max-width:930px) {
+		margin-top: 15px;
+		width: 100%;
+		max-width: 300px;
+		height: 77px;
+		font-size: 17px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.weight-counter-row {
+	grid-area: weight-counter-row;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 25px;
+	margin-bottom: auto;
+
+	@media(max-width:930px) {
+		display: block;
+		margin-top: 40px;
+	}
+}
+
+.weight-result {
+	grid-area: weight-result;
+	margin-bottom: auto;
+	margin-top: 25px;
+
+	@media(max-width:930px) {
+		justify-content: center;
+	}
+}
+
+.weight-result {
+	display: flex;
+	align-items: center;
+}
+
+.weight-counter-number {
+	font-size: 43px;
+	min-width: 131.71px;
+	height: 63px;
+	margin-right: 17px;
+
+	@media(max-width:930px) {
+		margin-left: auto;
+		margin-right: auto;
+		width: fit-content;
+	}
+}
+
+.weight__footer-title {
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 35px;
+	color: #252C15;
+
+	@media(max-width:992px) {
+		font-size: 20px;
+		line-height: 28px;
+		text-align: center;
+		padding-left: 10px;
+		padding-right: 10px;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.weight__footer-text {
+	padding-top: 15px;
+	font-family: 'Ysabeau';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 19px;
+	line-height: 24px;
+
+	color: #191F09;
+
+	@media(max-width:992px) {
+		font-size: 17px;
+		line-height: 22px;
+		text-align: center;
+		padding-top: 5px;
+	}
+}
+
+.weight__footer {
+	display: grid;
+	grid-template-columns: 580px 1fr 212px;
+
+	gap: 0 55px;
+
+	background: #FAFCF2;
+	border-radius: 15px;
+	margin-top: 15px;
+	padding-right: 55px;
+	padding-left: 17px;
+
+	@media(max-width:1295px) {
+		padding-left: 10px;
+		padding-right: 10px;
+		grid-template-columns: 1fr 270px 212px;
+		gap: 0 20px;
+	}
+
+	@media(max-width:992px) {
+		display: block;
+		margin-top: 40px;
+		padding-top: 1px;
+	}
+
+}
+
+.weight__footer-diagramm {
+	margin-top: 20px;
+	width: 100%;
+	object-fit: contain;
+
+	@media(max-width:992px) {
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+}
+
+.weight__footer-coll {
+	padding-top: 45px;
+
+	@media(max-width:992px) {
+		padding-top: 15px;
+	}
+}
+
+.weight__footer-img {
+	width: 100%;
+
+	@media(max-width:992px) {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		width: 205px;
+	}
+}

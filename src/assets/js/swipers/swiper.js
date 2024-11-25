@@ -54,6 +54,31 @@ const reviewsSwiperConfig = {
 	},
 };
 
+const nutritionSwiper = document.querySelector(".nutrition__swiper");
+const nutritionSwiperConfig = {
+	slidesPerView: 4,
+	spaceBetween: 10,
+
+	breakpoints: {
+		320: {
+			slidesPerView: 1.5,
+			spaceBetween: 40,
+		},
+		660: {
+			slidesPerView: 2.5,
+			spaceBetween: 30,
+		},
+		998: {
+			slidesPerView: 3.2,
+			spaceBetween: 40,
+		},
+		1300: {
+			slidesPerView: 4,
+			spaceBetween: 50,
+		},
+	},
+};
+
 /**
  * Функция для инициализации Swiper
  * @param {HTMLElement} swiperElement - Элемент DOM для Swiper
@@ -70,3 +95,4 @@ function swiperInstal(swiperElement, config) {
 }
 swiperInstal(fastingSwiper, fastingSwiperConfig);
 swiperInstal(reviewsSwiper, reviewsSwiperConfig);
+swiperInstal(nutritionSwiper, nutritionSwiperConfig);

@@ -176,7 +176,7 @@
 .access__form {
 	margin-top: 60px;
 
-	@media(max-width:792px) {
+	@media(max-width:992px) {
 		margin-top: 108px;
 	}
 }
@@ -226,12 +226,13 @@
 
 	@media(max-width:998px) {
 		left: 50%;
+		top: -85px;
 	}
 
 	@media(max-width:792px) {
 		width: 200px;
 		height: 127px;
-		top: -20px;
+
 
 		&::before {
 			transform: translate(13%, -36%);
@@ -385,6 +386,8 @@
 
 	@media(max-width:792px) {
 		background: url("../../assets/img/email.svg") no-repeat center right 15px/contain, #FDFFF4;
+		background-size: 32px 32px;
+
 	}
 }
 

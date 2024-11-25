@@ -1,0 +1,146 @@
+.info {
+	padding-top: 45px;
+	position: relative;
+
+	@media(max-width:792px) {
+		padding-top: 5px;
+	}
+}
+
+.info-title {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 33px;
+	line-height: 43px;
+	text-align: center;
+	color: #B84143;
+
+	@media(max-width:792px) {
+		font-family: 'Raleway';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 25px;
+		line-height: 30px;
+		text-align: center;
+
+		color: #B84143;
+
+		span {
+			display: block;
+		}
+
+	}
+}
+
+.info-row {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 25px;
+	margin-top: 28px;
+
+	@media(max-width:1250px) {
+		gap: 10px;
+	}
+
+	@media(max-width:870px) {
+		display: block;
+	}
+
+	@media(max-width:792px) {
+		margin-top: 25px;
+	}
+}
+
+.info-box {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	align-items: center;
+	justify-content: flex-start;
+
+
+	background: rgba(81, 90, 58, 0.09);
+	border-radius: 15px;
+	padding: 45px 30px 45px 50px;
+
+	@media(max-width:1250px) {
+		padding: 20px;
+	}
+
+	@media(max-width:870px) {
+		border-radius: 0;
+		padding: 5px 20px 5px 30px;
+
+		&:nth-child(1) {
+			border-radius: 15px 15px 0 0;
+			padding-top: 25px;
+		}
+
+		&:nth-last-child(1) {
+			border-radius: 0 0 15px 15px;
+			padding-bottom: 20px;
+		}
+	}
+}
+
+.info__box-img {
+	width: 92px;
+	height: 120px;
+	object-fit: contain;
+	margin-right: 30px;
+
+	@media(max-width:1250px) {
+		width: 82px;
+		height: 100px;
+		margin-right: 15px;
+	}
+
+	@media(max-width:992px) {
+		width: 70px;
+		height: 99px;
+	}
+
+	@media(max-width:870px) {
+		margin-right: 30px;
+	}
+}
+
+.info__box-title {
+
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 32px;
+	color: #252C15;
+
+	@media(max-width:992px) {
+		font-size: 22px;
+	}
+
+}
+
+.info__box-text {
+	font-family: 'Ysabeau';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 19px;
+	line-height: 24px;
+	color: #191F09;
+	padding-top: 10px;
+
+	@media(max-width:992px) {
+		font-family: 'Ysabeau';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 22px;
+		color: #191F09;
+	}
+}
+
+.info-back-img {
+	top: 36%;
+}

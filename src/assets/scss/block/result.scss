@@ -1,0 +1,27 @@
+.result-back {
+	background: url("../../assets/img/result-back.png") no-repeat center top/cover, #E9ECDD;
+
+	@media(max-width:1500px) {
+		background: url("../../assets/img/result-back.png") no-repeat center top/contain, #E9ECDD;
+	}
+
+	@media(max-width:992px) {
+		background: #E9ECDD;
+	}
+}
+
+.result-reviews-btn-rows {
+	display: none;
+
+	@media(max-width:792px) {
+		display: block;
+	}
+}
+
+.result-access {
+	margin-top: 120px;
+
+	@media(max-width:792px) {
+		margin-top: 0px;
+	}
+}
