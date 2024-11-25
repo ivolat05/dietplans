@@ -14,4 +14,9 @@
 --include("components/validation.js")
 --include("components/load.js")
 --include("swipers/swiper.js")
+--include("components/scroll-block.js")
+--include("components/parameters-validate.js")
+--include("components/analise-animate.js")
+
+
 
