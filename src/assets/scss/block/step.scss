@@ -126,6 +126,8 @@ input:checked+.step__quest-span {
 
 .step__btn-next {
 	background: #93C13A;
+	grid-column: 3/4;
+	grid-row: 1/2;
 }
 
 .step__present-text {
