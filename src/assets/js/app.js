@@ -18,4 +18,5 @@
 --include("components/parameters-validate.js")
 --include("components/analise-animate.js")
 --include("components/step-quiz.js")
-
+--include("components/dataCollectionQuiz.js")
+--include("components/calculations.js")

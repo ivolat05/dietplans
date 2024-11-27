@@ -54,11 +54,16 @@ function paralaxAnimation(
 
 const trigerMain = document.querySelector(".main__row");
 const mainBox = document.querySelectorAll(".main__row-box");
+const timeAnimate = `+=${window.innerHeight * 1.2}`;
 if (trigerMain && mainBox) {
 	const mainAnimategroup = gsap.timeline({
 		scrollTrigger: {
 			trigger: trigerMain,
-			start: "top center",
+			start: "center center",
+			pinSpacer: true,
+			scrub: true,
+			pin: true,
+			end: timeAnimate,
 		},
 	});
 
@@ -66,7 +71,6 @@ if (trigerMain && mainBox) {
 		mainAnimategroup.to(box, {
 			y: "0",
 			opacity: 1,
-			duration: 0.5,
 		});
 	});
 }
@@ -76,26 +80,26 @@ const trigerSolution = document.querySelector(".solution");
 if (trigerSolution) {
 	const leftPanel = document.querySelector(".soluton__wrapp");
 	const rightPanel = document.querySelector(".solution__list-container");
+	const t = gsap.timeline({
+		scrollTrigger: {
+			trigger: trigerSolution,
+			start: "center center",
+			pinSpacer: true,
+			scrub: true,
+			pin: true,
+			end: timeAnimate,
+		},
+	});
 	if (leftPanel) {
-		gsap.to(leftPanel, {
+		t.to(leftPanel, {
 			x: "0",
 			opacity: 1,
-			duration: 2,
-			scrollTrigger: {
-				trigger: trigerSolution,
-				start: "top center",
-			},
 		});
 	}
 	if (rightPanel) {
-		gsap.to(rightPanel, {
+		t.to(rightPanel, {
 			opacity: 1,
 			x: "0",
-			duration: 2,
-			scrollTrigger: {
-				trigger: trigerSolution,
-				start: "top center",
-			},
 		});
 	}
 }
@@ -103,19 +107,22 @@ if (trigerSolution) {
 //wish animation
 const trigerWish = document.querySelector(".wish");
 if (trigerWish) {
-	const wishImg = document.querySelector(".wish__row-img");
+	const wishImg = document.querySelector(".wish__row");
 	const wishBoxAll = document.querySelectorAll(".wish__list-inner");
 	const wishWrapp = document.querySelector(".wish-wrapp");
 	const wishTimeline = gsap.timeline({
 		scrollTrigger: {
-			trigger: trigerSolution,
+			trigger: trigerWish,
 			start: "top top",
+			pinSpacer: true,
+			scrub: true,
+			pin: true,
+			end: `+=${window.innerHeight * 3}`,
 		},
 	});
 	if (wishImg) {
 		wishTimeline.to(wishImg, {
 			opacity: 1,
-			duration: 1,
 		});
 	}
 	if (wishBoxAll) {
@@ -123,7 +130,6 @@ if (trigerWish) {
 			wishTimeline.to(wishBox, {
 				x: "0",
 				opacity: 1,
-				duration: 0.5,
 			});
 		});
 	}
@@ -131,7 +137,6 @@ if (trigerWish) {
 		wishTimeline.to(wishWrapp, {
 			opacity: 1,
 			scale: 1,
-			duration: 0.5,
 		});
 	}
 }
@@ -139,47 +144,62 @@ if (trigerWish) {
 // fasting animation
 const fastingTop = document.querySelector(".fasting-top");
 const trigerFastingTop = document.querySelector(".fasting");
+const clockAnimategroup = gsap.timeline({
+	scrollTrigger: {
+		trigger: trigerFastingTop,
+		start: "top top",
+		pinSpacer: true,
+		scrub: true,
+		pin: true,
+		end: `+=${window.innerHeight * 2}`,
+	},
+});
 if (fastingTop && trigerFastingTop) {
-	gsap.to(fastingTop, {
+	clockAnimategroup.to(fastingTop, {
 		y: "0",
 		opacity: 1,
-		duration: 0.7,
-		scrollTrigger: {
-			trigger: trigerFastingTop,
-			start: "top center",
-		},
 	});
 }
 
 const trigerBlock = document.querySelector(".fasting-bottom ");
 const arrowClock = document.querySelector(".fasting-svg-arrow");
+
 if (trigerBlock && arrowClock) {
-	const clockAnimategroup = gsap.timeline({
-		scrollTrigger: {
-			trigger: trigerBlock,
-			start: "top center",
+	clockAnimategroup.fromTo(
+		trigerBlock,
+		{
+			opacity: 0,
 		},
-	});
+		{
+			opacity: 1,
+		}
+	);
+
 	clockAnimategroup.to(".fasting-bottom-title", {
 		x: "0",
 		opacity: 1,
-		duration: 0.5,
 	});
 	clockAnimategroup.to(".fasting__list-check", {
 		x: "0",
 		opacity: 1,
-		duration: 0.5,
 	});
 
 	clockAnimategroup.to(".fasting-bottom-footer", {
 		x: "0",
 		opacity: 1,
-		duration: 0.5,
 	});
+	clockAnimategroup.fromTo(
+		".fasting-scales ",
+		{
+			opacity: 0,
+		},
+		{
+			opacity: 1,
+		}
+	);
 	clockAnimategroup.to(".fasting-svg-arrow", {
 		transformOrigin: "bottom right",
 		rotation: -100,
-		duration: 4,
 	});
 }
 
@@ -193,7 +213,11 @@ if (trigerBlockDiet) {
 	const dietAnimategroup = gsap.timeline({
 		scrollTrigger: {
 			trigger: trigerBlockDiet,
-			start: "top center",
+			start: "center center",
+			pinSpacer: true,
+			scrub: true,
+			pin: true,
+			end: timeAnimate,
 		},
 	});
 
@@ -201,14 +225,12 @@ if (trigerBlockDiet) {
 		dietAnimategroup.to(dietTitle, {
 			y: "0",
 			opacity: 1,
-			duration: 0.5,
 		});
 	}
 	if (dietBtns) {
 		dietAnimategroup.to(dietBtns, {
 			x: "0",
 			opacity: 1,
-			duration: 0.5,
 		});
 	}
 	if (dietListInner) {
@@ -216,7 +238,6 @@ if (trigerBlockDiet) {
 			dietAnimategroup.to(inner, {
 				y: "0",
 				opacity: 1,
-				duration: 0.5,
 			});
 		});
 	}
@@ -224,7 +245,7 @@ if (trigerBlockDiet) {
 
 //animate questions
 
-const questionsBlockDiet = document.querySelector(".questions-title");
+const questionsBlockDiet = document.querySelector(".questions__wrapp");
 if (questionsBlockDiet) {
 	const questionsTitle = document.querySelector(".questions-title");
 
@@ -233,7 +254,11 @@ if (questionsBlockDiet) {
 	const questionsAnimategroup = gsap.timeline({
 		scrollTrigger: {
 			trigger: questionsBlockDiet,
-			start: "top center",
+			start: "center center",
+			pinSpacer: true,
+			scrub: true,
+			pin: true,
+			end: timeAnimate,
 		},
 	});
 
@@ -241,7 +266,6 @@ if (questionsBlockDiet) {
 		questionsAnimategroup.to(questionsTitle, {
 			y: "0",
 			opacity: 1,
-			duration: 0.5,
 		});
 	}
 
@@ -250,7 +274,6 @@ if (questionsBlockDiet) {
 			questionsAnimategroup.to(inner, {
 				y: "0",
 				opacity: 1,
-				duration: 0.5,
 			});
 		});
 	}
@@ -265,7 +288,11 @@ if (trigerReviews && reviewsAnimate) {
 		duration: 3,
 		scrollTrigger: {
 			trigger: trigerReviews,
-			start: "top center",
+			start: "center center",
+			pinSpacer: true,
+			scrub: true,
+			pin: true,
+			end: timeAnimate,
 		},
 	});
 }

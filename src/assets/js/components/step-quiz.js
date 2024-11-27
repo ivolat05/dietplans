@@ -4,10 +4,15 @@ function stepQuiz() {
 	const btnControllStep = document.querySelectorAll(".step__btn");
 	const allStep = document.querySelectorAll(".step__list-inner");
 	const stepInputAll = document.querySelectorAll(".step__quest-input");
+	const step = document.querySelector(".step");
 	let count = 0;
 	if (btnControllStep) {
 		btnControllStep.forEach((btn) => {
 			btn.addEventListener("click", () => {
+				step.scrollIntoView({
+					behavior: "auto",
+					block: "start",
+				});
 				if (btn.classList.contains("step__btn-next")) {
 					count += 1;
 				}
@@ -39,6 +44,10 @@ function stepQuiz() {
 				btnNext.removeAttribute("disabled");
 
 				if (input.type === "radio") {
+					step.scrollIntoView({
+						behavior: "auto",
+						block: "start",
+					});
 					count += 1;
 					nextStep(count);
 					// прокручиваеть навигацию с кративным вопросом в лево если номер активного вопроса не помещеаеться на экран

@@ -54,12 +54,11 @@ if (form) {
 
 	validation.onFail(() => {
 		let rect = inputs[0].getBoundingClientRect();
-		// Рассчитываем координату для прокрутки так, чтобы форма оказалась в центре экрана
-		// let targetPosition =
-		// 	window.pageYOffset +
-		// 	rect.top -
-		// 	(window.innerHeight / 2 - rect.height / 2);
-		let targetPosition = window.pageYOffset + rect.top - 100;
+		let topPadding = 100;
+		if (window.innerWidth < 998) {
+			topPadding = 10;
+		}
+		let targetPosition = window.pageYOffset + rect.top - topPadding;
 
 		// GSAP плавный скролл
 		gsap.to(window, {
