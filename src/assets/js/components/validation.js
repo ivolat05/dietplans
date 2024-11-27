@@ -1,5 +1,6 @@
 // validation
 const form = document.getElementById("#form-access");
+
 if (form) {
 	const validation = new JustValidate(form, {
 		errorLabelCssClass: "error", // Добавляет класс ошибок
@@ -52,12 +53,13 @@ if (form) {
 	// });
 
 	validation.onFail(() => {
-		const rect = form.getBoundingClientRect();
+		let rect = inputs[0].getBoundingClientRect();
 		// Рассчитываем координату для прокрутки так, чтобы форма оказалась в центре экрана
-		const targetPosition =
-			window.pageYOffset +
-			rect.top -
-			(window.innerHeight / 2 - rect.height / 2);
+		// let targetPosition =
+		// 	window.pageYOffset +
+		// 	rect.top -
+		// 	(window.innerHeight / 2 - rect.height / 2);
+		let targetPosition = window.pageYOffset + rect.top - 100;
 
 		// GSAP плавный скролл
 		gsap.to(window, {

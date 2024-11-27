@@ -12,7 +12,7 @@ const scrollToBlock = () => {
 					let coordinaY =
 						block.getBoundingClientRect().top +
 						window.pageYOffset -
-						(window.innerHeight / 2 - block.offsetHeight / 2);
+						100;
 
 					// GSAP плавный скролл
 					gsap.to(window, {

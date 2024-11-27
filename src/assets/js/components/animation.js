@@ -171,10 +171,6 @@ if (trigerBlock && arrowClock) {
 		duration: 0.5,
 	});
 
-	clockAnimategroup.to(".fasting-scales", {
-		scale: 1,
-		duration: 0.5,
-	});
 	clockAnimategroup.to(".fasting-bottom-footer", {
 		x: "0",
 		opacity: 1,
