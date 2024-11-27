@@ -13,13 +13,17 @@
 .result-reviews-btn-rows {
 	display: none;
 
-	@media(max-width:792px) {
+	@media(max-width:660px) {
 		display: block;
 	}
 }
 
+.result-reviews-swiper {
+	padding-bottom: 20px;
+}
+
 .result-access {
-	margin-top: 120px;
+	margin-top: 100px;
 
 	@media(max-width:792px) {
 		margin-top: 0px;

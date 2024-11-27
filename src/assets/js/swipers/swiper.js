@@ -2,12 +2,14 @@ const fastingSwiper = document.querySelector(".fasting-swiper");
 const fastingSwiperConfig = {
 	slidesPerView: 3,
 	spaceBetween: 10,
+	loop: true,
 	navigation: {
-		nextEl: ".fasting__slide-next",
-		prevEl: ".fasting__slide-prev",
+		nextEl: ".fasting__slide-prev",
+		prevEl: ".fasting__slide-next",
 	},
 	autoplay: {
 		delay: 3000,
+		reverseDirection: true,
 	},
 	breakpoints: {
 		320: {
@@ -29,11 +31,16 @@ const reviewsSwiper = document.querySelector(".reviews-swiper");
 const reviewsSwiperConfig = {
 	slidesPerView: 4,
 	spaceBetween: 10,
+	loop: true,
 	navigation: {
-		nextEl: ".reviews__slide-next",
-		prevEl: ".reviews__slide-prev",
+		nextEl: ".reviews__slide-prev",
+		prevEl: ".reviews__slide-next",
 	},
-
+	on: {
+		slideChange: () => {
+			openModalWindow(); // Вызов вашей функции при смене слайда
+		},
+	},
 	breakpoints: {
 		320: {
 			slidesPerView: 1,

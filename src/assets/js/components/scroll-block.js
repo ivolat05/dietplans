@@ -1,19 +1,13 @@
-const scrollCenter = document.querySelectorAll(".scroll-center");
-const scrollEnd = document.querySelectorAll(".scroll-end");
 window.addEventListener("load", () => {
-	if (scrollCenter) {
-		scrollCenter.forEach((element) => {
-			scrollCenterBlock(element);
-		});
-	}
-
-	if (scrollEnd) {
-		scrollEnd.forEach((element) => {
-			scrollEdnBloc(element);
-		});
-	}
+	scrollActiveBlock();
 });
 window.addEventListener("resize", () => {
+	scrollActiveBlock();
+});
+
+function scrollActiveBlock() {
+	const scrollCenter = document.querySelectorAll(".scroll-center");
+	const scrollEnd = document.querySelectorAll(".scroll-end");
 	if (scrollCenter) {
 		scrollCenter.forEach((element) => {
 			scrollCenterBlock(element);
@@ -25,7 +19,7 @@ window.addEventListener("resize", () => {
 			scrollEdnBloc(element);
 		});
 	}
-});
+}
 
 function scrollCenterBlock(elementScroll) {
 	const middlePosition =

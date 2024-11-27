@@ -172,8 +172,7 @@ if (trigerBlock && arrowClock) {
 	});
 
 	clockAnimategroup.to(".fasting-scales", {
-		x: "0",
-		opacity: 1,
+		scale: 1,
 		duration: 0.5,
 	});
 	clockAnimategroup.to(".fasting-bottom-footer", {

@@ -8,10 +8,11 @@ const scrollToBlock = () => {
 				let block = document.getElementById(id);
 
 				if (block) {
+					// Высчитываем координату, чтобы блок оказался по центру экрана
 					let coordinaY =
 						block.getBoundingClientRect().top +
 						window.pageYOffset -
-						30;
+						(window.innerHeight / 2 - block.offsetHeight / 2);
 
 					// GSAP плавный скролл
 					gsap.to(window, {
@@ -24,4 +25,5 @@ const scrollToBlock = () => {
 		});
 	}
 };
+
 scrollToBlock();

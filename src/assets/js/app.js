@@ -17,6 +17,5 @@
 --include("components/scroll-block.js")
 --include("components/parameters-validate.js")
 --include("components/analise-animate.js")
-
-
+--include("components/step-quiz.js")
 

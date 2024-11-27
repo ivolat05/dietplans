@@ -46,6 +46,10 @@ function analiseAnimate() {
 				if (progress == 100) {
 					if (btn) {
 						btn.classList.add("--active");
+						// редерекст на страницу результатов
+						setTimeout(() => {
+							window.location.href = "result.html";
+						}, 3000);
 					}
 				}
 				setTimeout(updateProgress, 100); // Интервал анимации
@@ -55,4 +59,3 @@ function analiseAnimate() {
 		updateProgress();
 	}
 }
-analiseAnimate();

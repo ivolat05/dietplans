@@ -50,4 +50,20 @@ if (form) {
 	// 	event.preventDefault(); // Отключаем стандартное поведение формы
 	// 	alert("Форма успешно отправлена!");
 	// });
+
+	validation.onFail(() => {
+		const rect = form.getBoundingClientRect();
+		// Рассчитываем координату для прокрутки так, чтобы форма оказалась в центре экрана
+		const targetPosition =
+			window.pageYOffset +
+			rect.top -
+			(window.innerHeight / 2 - rect.height / 2);
+
+		// GSAP плавный скролл
+		gsap.to(window, {
+			scrollTo: targetPosition, // Прокручиваем к нужной координате
+			duration: 1.5, // Длительность анимации
+			ease: "power2.inOut", // Плавное начало и конец движения
+		});
+	});
 }
