@@ -50,6 +50,346 @@ function paralaxAnimation(
 	}
 }
 
+// main animation
+
+const trigerMain = document.querySelector(".main__row");
+const mainBox = document.querySelectorAll(".main__row-box");
+if (trigerMain && mainBox) {
+	const mainAnimategroup = gsap.timeline({
+		scrollTrigger: {
+			trigger: trigerMain,
+			start: "top 90%",
+		},
+	});
+
+	mainBox.forEach((box) => {
+		mainAnimategroup.fromTo(
+			box,
+			{
+				y: "-100%",
+				opacity: 0,
+			},
+			{
+				y: "0",
+				opacity: 1,
+				duration: 0.5,
+			}
+		);
+	});
+}
+
+// solution animation
+const trigerSolution = document.querySelector(".solution");
+if (trigerSolution) {
+	const leftPanel = document.querySelector(".soluton__wrapp");
+	const rightPanel = document.querySelector(".solution__list-container");
+	if (leftPanel) {
+		gsap.fromTo(
+			leftPanel,
+			{
+				x: "-100%",
+				opacity: 0,
+			},
+			{
+				x: "0",
+				opacity: 1,
+				duration: 2,
+				scrollTrigger: {
+					trigger: trigerSolution,
+					start: "top 90%",
+				},
+			}
+		);
+	}
+	if (rightPanel) {
+		gsap.fromTo(
+			rightPanel,
+			{
+				opacity: 0,
+				x: "100%",
+			},
+			{
+				opacity: 1,
+				x: "0",
+				duration: 2,
+				scrollTrigger: {
+					trigger: trigerSolution,
+					start: "top 90%",
+				},
+			}
+		);
+	}
+}
+
+//wish animation
+const trigerWish = document.querySelector(".wish");
+if (trigerWish) {
+	const wishImg = document.querySelector(".wish__row-img");
+	const wishBoxAll = document.querySelectorAll(".wish__list-inner");
+	const wishWrapp = document.querySelector(".wish-wrapp");
+	const wishTimeline = gsap.timeline({
+		scrollTrigger: {
+			trigger: trigerSolution,
+			start: "top 90%",
+		},
+	});
+	if (wishImg) {
+		wishTimeline.fromTo(
+			wishImg,
+			{
+				opacity: 0,
+			},
+			{
+				opacity: 1,
+				duration: 1,
+			}
+		);
+	}
+	if (wishBoxAll) {
+		wishBoxAll.forEach((wishBox, index) => {
+			wishTimeline.fromTo(
+				wishBox,
+				{
+					x: index % 2 === 0 ? "-100%" : "100%",
+					opacity: 0,
+				},
+				{
+					x: "0",
+					opacity: 1,
+					duration: 0.5,
+				}
+			);
+		});
+	}
+	if (wishWrapp) {
+		wishTimeline.fromTo(
+			wishWrapp,
+			{
+				opacity: 0,
+				scale: 0,
+			},
+			{
+				opacity: 1,
+				scale: 1,
+				duration: 0.5,
+			}
+		);
+	}
+}
+
+// fasting animation
+const fastingTop = document.querySelector(".fasting-top");
+const trigerFastingTop = document.querySelector(".fasting");
+if (fastingTop && trigerFastingTop) {
+	gsap.fromTo(
+		fastingTop,
+		{
+			y: "100%",
+			opacity: 0,
+		},
+		{
+			y: "0",
+			opacity: 1,
+			duration: 0.7,
+			scrollTrigger: {
+				trigger: trigerFastingTop,
+				start: "top 90%",
+			},
+		}
+	);
+}
+
+const trigerBlock = document.querySelector(".fasting-bottom ");
+const arrowClock = document.querySelector(".fasting-svg-arrow");
+if (trigerBlock && arrowClock) {
+	const clockAnimategroup = gsap.timeline({
+		scrollTrigger: {
+			trigger: trigerBlock,
+			start: "top 90%",
+		},
+	});
+	clockAnimategroup.fromTo(
+		".fasting-bottom-title",
+		{
+			x: "-100%",
+			opacity: 0,
+		},
+		{
+			x: "0",
+			opacity: 1,
+			duration: 0.5,
+		}
+	);
+	clockAnimategroup.fromTo(
+		".fasting__list-check",
+		{
+			x: "-100%",
+			opacity: 0,
+		},
+		{
+			x: "0",
+			opacity: 1,
+			duration: 0.5,
+		}
+	);
+
+	clockAnimategroup.fromTo(
+		".fasting-bottom-footer",
+		{
+			x: "-100%",
+			opacity: 0,
+		},
+		{
+			x: "0",
+			opacity: 1,
+			duration: 0.5,
+		}
+	);
+	clockAnimategroup.fromTo(
+		".fasting-scales ",
+		{
+			opacity: 0,
+		},
+		{
+			opacity: 1,
+			duration: 0.5,
+		}
+	);
+	clockAnimategroup.to(".fasting-svg-arrow", {
+		transformOrigin: "bottom right",
+		rotation: -100,
+		duration: 4,
+	});
+}
+
+// animate diet
+const trigerBlockDiet = document.querySelector(".diet");
+if (trigerBlockDiet) {
+	const dietTitle = document.querySelector(".diet-title");
+	const dietBtns = document.querySelector(".diet-btn-row");
+	const dietListInner = document.querySelectorAll(".diet-list-inner");
+
+	const dietAnimategroup = gsap.timeline({
+		scrollTrigger: {
+			trigger: trigerBlockDiet,
+			start: "top 90%",
+		},
+	});
+
+	if (dietTitle) {
+		dietAnimategroup.fromTo(
+			dietTitle,
+			{
+				y: "-100%",
+				opacity: 0,
+			},
+			{
+				y: "0",
+				opacity: 1,
+				duration: 0.5,
+			}
+		);
+	}
+	if (dietBtns) {
+		dietAnimategroup.fromTo(
+			dietBtns,
+			{
+				x: "-100%",
+				opacity: 0,
+			},
+			{
+				x: "0",
+				opacity: 1,
+				duration: 0.5,
+			}
+		);
+	}
+	if (dietListInner) {
+		dietListInner.forEach((inner) => {
+			dietAnimategroup.fromTo(
+				inner,
+				{
+					y: "100%",
+					opacity: 0,
+				},
+				{
+					y: "0",
+					opacity: 1,
+					duration: 0.5,
+				}
+			);
+		});
+	}
+}
+
+//animate questions
+
+const questionsBlockDiet = document.querySelector(".questions-title");
+if (questionsBlockDiet) {
+	const questionsTitle = document.querySelector(".questions-title");
+
+	const questionsAcc = document.querySelectorAll(".questions__accordion");
+
+	const questionsAnimategroup = gsap.timeline({
+		scrollTrigger: {
+			trigger: questionsBlockDiet,
+			start: "top 90%",
+		},
+	});
+
+	if (questionsTitle) {
+		questionsAnimategroup.fromTo(
+			questionsTitle,
+			{
+				y: "-100%",
+				opacity: 0,
+			},
+			{
+				y: "0",
+				opacity: 1,
+				duration: 0.5,
+			}
+		);
+	}
+
+	if (questionsAcc) {
+		questionsAcc.forEach((inner) => {
+			questionsAnimategroup.fromTo(
+				inner,
+				{
+					y: "100%",
+					opacity: 0,
+				},
+				{
+					y: "0",
+					opacity: 1,
+					duration: 0.5,
+				}
+			);
+		});
+	}
+}
+
+// reivews animate
+const reviewsAnimate = document.querySelector(".reviews-animate");
+const trigerReviews = document.querySelector(".reviews");
+if (trigerReviews && reviewsAnimate) {
+	gsap.fromTo(
+		reviewsAnimate,
+		{
+			opacity: 0,
+		},
+		{
+			opacity: 1,
+			duration: 3,
+			scrollTrigger: {
+				trigger: trigerReviews,
+				start: "top 90%",
+			},
+		}
+	);
+}
+
 // Анимация для чисел
 const animateNumbers = (element, target) => {
 	gsap.to(element, {
@@ -91,396 +431,4 @@ if (progressBars) {
 			},
 		});
 	});
-}
-
-// анимация главной старницы
-function animateHomePage() {
-	const lenis = new Lenis({
-		duration: 1.8, // Увеличиваем длительность для более мягкой прокрутки
-		easing: (t) => 1 - Math.pow(1 - t, 3), // Используем easing с более плавным эффектом
-	});
-	function raf(time) {
-		lenis.raf(time);
-		ScrollTrigger.update();
-		requestAnimationFrame(raf);
-	}
-
-	requestAnimationFrame(raf);
-
-	// main animation
-
-	const trigerMain = document.querySelector(".main__row");
-	const mainBox = document.querySelectorAll(".main__row-box");
-	const timeAnimate = `+=${window.innerHeight * 1.2}`;
-	if (trigerMain && mainBox) {
-		const mainAnimategroup = gsap.timeline({
-			scrollTrigger: {
-				trigger: trigerMain,
-				start: "center center",
-				pinSpacer: true,
-				scrub: true,
-				pin: true,
-				end: timeAnimate,
-			},
-		});
-
-		mainBox.forEach((box) => {
-			mainAnimategroup.fromTo(
-				box,
-				{
-					y: "-100%",
-					opacity: 0,
-				},
-				{
-					y: "0",
-					opacity: 1,
-				}
-			);
-		});
-	}
-
-	// solution animation
-	const trigerSolution = document.querySelector(".solution");
-	if (trigerSolution) {
-		const leftPanel = document.querySelector(".soluton__wrapp");
-		const rightPanel = document.querySelector(".solution__list-container");
-		const solutionTimeline = gsap.timeline({
-			scrollTrigger: {
-				trigger: trigerSolution,
-				start: "center center",
-				pinSpacer: true,
-				scrub: true,
-				pin: true,
-				end: timeAnimate,
-			},
-		});
-		if (leftPanel) {
-			solutionTimeline.fromTo(
-				leftPanel,
-				{
-					x: "-100%",
-					opacity: 0,
-				},
-				{
-					x: "0",
-					opacity: 1,
-				}
-			);
-		}
-		if (rightPanel) {
-			solutionTimeline.fromTo(
-				rightPanel,
-				{
-					opacity: 0,
-					x: "100%",
-				},
-				{
-					opacity: 1,
-					x: "0",
-				}
-			);
-		}
-	}
-
-	//wish animation
-	const trigerWish = document.querySelector(".wish");
-	if (trigerWish) {
-		const wishRow = document.querySelector(".wish__row");
-		const wishBoxAll = document.querySelectorAll(".wish__list-inner");
-		const wishWrapp = document.querySelector(".wish-wrapp");
-		const wishTimeline = gsap.timeline({
-			scrollTrigger: {
-				trigger: trigerWish,
-				start: "top top",
-				pinSpacer: true,
-				scrub: true,
-				pin: true,
-				end: `+=${window.innerHeight * 3}`,
-			},
-		});
-		if (wishRow) {
-			wishTimeline.fromTo(
-				wishRow,
-				{
-					opacity: 0,
-				},
-				{
-					opacity: 1,
-				}
-			);
-		}
-		if (wishBoxAll) {
-			wishBoxAll.forEach((wishBox, index) => {
-				wishTimeline.fromTo(
-					wishBox,
-					{
-						x: index % 2 === 0 ? "-100%" : "100%",
-						opacity: 0,
-					},
-					{
-						x: "0",
-						opacity: 1,
-					}
-				);
-			});
-		}
-		if (wishWrapp) {
-			wishTimeline.fromTo(
-				wishWrapp,
-				{
-					opacity: 0,
-					scale: 0,
-				},
-				{
-					opacity: 1,
-					scale: 1,
-				}
-			);
-		}
-	}
-
-	// fasting animation
-	const fastingTop = document.querySelector(".fasting-top");
-	const trigerFastingTop = document.querySelector(".fasting");
-	const clockAnimategroup = gsap.timeline({
-		scrollTrigger: {
-			trigger: trigerFastingTop,
-			start: "top top",
-			pinSpacer: true,
-			scrub: true,
-			pin: true,
-			end: `+=${window.innerHeight * 2}`,
-		},
-	});
-	if (fastingTop && trigerFastingTop) {
-		clockAnimategroup.fromTo(
-			fastingTop,
-			{
-				y: "100%",
-				opacity: 0,
-			},
-			{
-				y: "0",
-				opacity: 1,
-			}
-		);
-	}
-
-	const trigerBlock = document.querySelector(".fasting-bottom ");
-	const arrowClock = document.querySelector(".fasting-svg-arrow");
-
-	if (trigerBlock && arrowClock) {
-		clockAnimategroup.fromTo(
-			trigerBlock,
-			{
-				opacity: 0,
-			},
-			{
-				opacity: 1,
-			}
-		);
-
-		clockAnimategroup.fromTo(
-			".fasting-bottom-title",
-			{
-				x: "-100%",
-				opacity: 0,
-			},
-			{
-				x: "0",
-				opacity: 1,
-			}
-		);
-		clockAnimategroup.fromTo(
-			".fasting__list-check",
-			{
-				x: "-100%",
-				opacity: 0,
-			},
-			{
-				x: "0",
-				opacity: 1,
-			}
-		);
-
-		clockAnimategroup.fromTo(
-			".fasting-bottom-footer",
-			{
-				x: "-100%",
-				opacity: 0,
-			},
-			{
-				x: "0",
-				opacity: 1,
-			}
-		);
-		clockAnimategroup.fromTo(
-			".fasting-scales ",
-			{
-				opacity: 0,
-			},
-			{
-				opacity: 1,
-			}
-		);
-		clockAnimategroup.to(".fasting-svg-arrow", {
-			transformOrigin: "bottom right",
-			rotation: -100,
-		});
-	}
-
-	// animate diet
-	const trigerBlockDiet = document.querySelector(".diet");
-	if (trigerBlockDiet) {
-		const dietTitle = document.querySelector(".diet-title");
-		const dietBtns = document.querySelector(".diet-btn-row");
-		const dietListInner = document.querySelectorAll(".diet-list-inner");
-
-		const dietAnimategroup = gsap.timeline({
-			scrollTrigger: {
-				trigger: trigerBlockDiet,
-				start: "center center",
-				pinSpacer: true,
-				scrub: true,
-				pin: true,
-				end: timeAnimate,
-			},
-		});
-
-		if (dietTitle) {
-			dietAnimategroup.fromTo(
-				dietTitle,
-				{
-					y: "-100%",
-					opacity: 0,
-				},
-				{
-					y: "0",
-					opacity: 1,
-				}
-			);
-		}
-		if (dietBtns) {
-			dietAnimategroup.fromTo(
-				dietBtns,
-				{
-					x: "-100%",
-					opacity: 0,
-				},
-				{
-					x: "0",
-					opacity: 1,
-				}
-			);
-		}
-		if (dietListInner) {
-			dietListInner.forEach((inner) => {
-				dietAnimategroup.fromTo(
-					inner,
-					{
-						y: "100%",
-						opacity: 0,
-					},
-					{
-						y: "0",
-						opacity: 1,
-					}
-				);
-			});
-		}
-	}
-
-	//animate questions
-
-	const questionsBlockDiet = document.querySelector(".questions__wrapp");
-	if (questionsBlockDiet) {
-		const questionsTitle = document.querySelector(".questions-title");
-
-		const questionsAcc = document.querySelectorAll(".questions__accordion");
-
-		const questionsAnimategroup = gsap.timeline({
-			scrollTrigger: {
-				trigger: questionsBlockDiet,
-				start: "center center",
-				pinSpacer: true,
-				scrub: true,
-				pin: true,
-				end: timeAnimate,
-			},
-		});
-
-		if (questionsTitle) {
-			questionsAnimategroup.fromTo(
-				questionsTitle,
-				{
-					y: "-100%",
-					opacity: 0,
-				},
-				{
-					y: "0",
-					opacity: 1,
-				}
-			);
-		}
-
-		if (questionsAcc) {
-			questionsAcc.forEach((inner) => {
-				questionsAnimategroup.fromTo(
-					inner,
-					{
-						y: "100%",
-						opacity: 0,
-					},
-					{
-						y: "0",
-						opacity: 1,
-					}
-				);
-			});
-		}
-	}
-
-	// reivews animate
-	const reviewsAnimate = document.querySelector(".reviews-animate");
-	const trigerReviews = document.querySelector(".reviews");
-	if (trigerReviews && reviewsAnimate) {
-		gsap.fromTo(
-			reviewsAnimate,
-			{
-				opacity: 0,
-			},
-			{
-				opacity: 1,
-				scrollTrigger: {
-					trigger: trigerReviews,
-					start: "center center",
-					pinSpacer: true,
-					scrub: true,
-					pin: true,
-					end: timeAnimate,
-				},
-			}
-		);
-	}
-}
-
-function animateArrowClock() {
-	const arrow = document.querySelector(".fasting-svg-arrow");
-	const triger = document.querySelector(".fasting-scales");
-	if (arrow && triger) {
-		gsap.to(arrow, {
-			transformOrigin: "bottom right",
-			rotation: -100,
-			scrollTrigger: {
-				trigger: triger,
-				start: "top center",
-			},
-		});
-	}
-}
-
-if (window.innerWidth > 992) {
-	animateHomePage();
-} else {
-	animateArrowClock();
 }

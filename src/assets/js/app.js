@@ -1,4 +1,3 @@
---include('vendor/lenis.min.js')
 --include('vendor/gsap.min.js')
 --include('vendor/ScrollTrigger.min.js')
 --include('vendor/ScrollToPlugin.js')
