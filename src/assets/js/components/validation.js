@@ -51,9 +51,11 @@ if (form) {
 	// 	event.preventDefault(); // Отключаем стандартное поведение формы
 	// 	alert("Форма успешно отправлена!");
 	// });
-
+	const recInput = Array.from(form.querySelectorAll("input")).filter(
+		(input) => input.type !== "hidden"
+	);
 	validation.onFail(() => {
-		let rect = inputs[0].getBoundingClientRect();
+		let rect = recInput[0].getBoundingClientRect();
 		let topPadding = 100;
 		if (window.innerWidth < 998) {
 			topPadding = 10;
