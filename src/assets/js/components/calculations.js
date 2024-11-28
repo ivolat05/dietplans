@@ -71,6 +71,28 @@ function recommendedAmountCalories(weight, height, age, amr = 1.2, poll = "w") {
 }
 
 /**
+ *  количество калорий по умолчанию
+
+ * @param {string} [poll="w"] - пол передется "w" или "m",
+ */
+
+function defaultCalories(poll = "w") {
+	const htmlContainer = document.querySelector(
+		".recommended-amount-calories"
+	);
+	const inputCalories = document.getElementById("calories");
+	let calories = 2450;
+	if (poll == "m") {
+		calories = 2950;
+	}
+	if (htmlContainer) {
+		htmlContainer.innerHTML = calories;
+	}
+	if (inputCalories) {
+		inputCalories.value = calories;
+	}
+}
+/**
  * Рекомендуемое количество воды
  *
  * @param {number} [weight] -  масса в кг
@@ -156,8 +178,12 @@ function renderCalculations(quizData) {
 			// расчет индекса массы тела
 			bodyMassIndex(currentWeight, height);
 
-			// расчет рекомендуемого количества калорий
-			recommendedAmountCalories(currentWeight, height, age, 1.2, pol);
+			if (currentWeight < desiredWeight) {
+				defaultCalories(pol);
+			} else {
+				// расчет рекомендуемого количества калорий
+				recommendedAmountCalories(currentWeight, height, age, 1.2, pol);
+			}
 
 			// расчет рекомендуемого количества воды
 			recommendedAmountWater(currentWeight);

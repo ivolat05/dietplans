@@ -1,4 +1,6 @@
 function analiseAnimate() {
+	// здесь вставить ссылку на которую необходимо переходить со страницы теста
+	const redirectLink = "result.html";
 	const leaves = document.querySelectorAll(".-leaves");
 	const steps = document.querySelectorAll(".-steps");
 	if (leaves && steps) {
@@ -46,10 +48,14 @@ function analiseAnimate() {
 				if (progress == 100) {
 					if (btn) {
 						btn.classList.add("--active");
-						// редерекст на страницу результатов
+						// переход на страницу
 						setTimeout(() => {
-							window.location.href = "result.html";
+							window.location.replace(redirectLink);
 						}, 3000);
+						// переход на страницу
+						btn.addEventListener("click", () => {
+							window.location.replace(redirectLink);
+						});
 					}
 				}
 				setTimeout(updateProgress, 100); // Интервал анимации

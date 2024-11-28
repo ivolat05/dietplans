@@ -4,6 +4,8 @@ function stepQuiz() {
 	const btnControllStep = document.querySelectorAll(".step__btn");
 	const allStep = document.querySelectorAll(".step__list-inner");
 	const stepInputAll = document.querySelectorAll(".step__quest-input");
+	//const step = document.querySelector(".header");
+	//const step = document.querySelector(".page");
 	const step = document.querySelector(".step");
 	let count = 0;
 	if (btnControllStep) {
