@@ -320,21 +320,3 @@
 		display: none;
 	}
 }
-
-.wish__row {
-	opacity: 0;
-}
-
-.wish__list-inner {
-	transform: translateX(-100%);
-	opacity: 0;
-
-	&:nth-child(odd) {
-		transform: translateX(100%);
-	}
-}
-
-.wish-wrapp {
-	transform: scale(0);
-	opacity: 0;
-}
