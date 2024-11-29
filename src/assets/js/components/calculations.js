@@ -148,8 +148,11 @@ function calculateFinalWeight(currentWeight, desiredWeight) {
 	if (pointer) {
 		pointer.style.transform = `rotate(${(finalWeight / 300) * 360}deg)`;
 	}
-	if (weightInfo) {
-		weightInfo.innerHTML = finalWeight;
+	if (weightInfo && finalWeight) {
+		weightInfo.innerHTML =
+			finalWeight % 1 === 0
+				? finalWeight
+				: Number(finalWeight.toFixed(1));
 	}
 }
 // отоброжение расчетов на станице

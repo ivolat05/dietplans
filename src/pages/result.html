@@ -12,11 +12,39 @@
 	if (savedData) {
 		const parserData = JSON.parse(savedData);
 		quizData = { ...parserData }
-		//	localStorage.removeItem("quizData");
+		// Запускаем функцию при загрузке страницы
+		window.addEventListener('load', () => removeQuizDataAfterTimeout(20, "quizData"));
 	} else {
 		const link = "step.html";
 		window.location.href = link;
 	}
+	// Функция для удаления элемента через 20 минут и обновления времени при каждом цикле
+	// time-вермя через которое енобхоидмо удалить данные
+	// nameDelete- имя localStorage который необхоидмо удалить
+
+	function removeQuizDataAfterTimeout(time, nameDelete) {
+		const storedTime = localStorage.getItem('pageLoadTime');
+		let currentTime = new Date().getTime();
+		const timeout = +time * 60 * 1000;
+
+
+		if (!storedTime) {
+			localStorage.setItem('pageLoadTime', currentTime);
+		} else {
+			// Проверяем, прошло ли 20 минут
+			const timeElapsed = currentTime - parseInt(storedTime);
+
+			if (timeElapsed >= timeout) {
+				// Если прошло больше 20 минут, удаляем элемент
+				localStorage.removeItem(nameDelete);
+				console.log("quizData удален из localStorage");
+				currentTime = new Date().getTime();
+
+				localStorage.setItem('pageLoadTime', currentTime);
+			}
+		}
+	}
+
 
 </script>
 
@@ -131,15 +159,7 @@
 	<script src="./assets/js/app.min.js"></script>
 
 	<script>
-		renderCalculations(quizData)
-		const btn = document.querySelector(".access__form-btn");
-		btn.addEventListener("click", () => {
-			const wrapp = btn.closest(".access__form");
-			const inputs = wrapp.querySelectorAll("input");
-			inputs.forEach(input => {
-				console.log(`${input.name} = ${input.value}`)
-			});
-		})
+		renderCalculations(quizData) 
 	</script>
 </body>
 

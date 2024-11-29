@@ -3,9 +3,10 @@
  *
  * @param {idTimerElement} idTimerElement - id таймера
  * @param {minut} [minut] - количиство минут для обратного отсчета
+ *  @param {string} [nameLocal] - имя для сохранения локальной истоприи
 
  */
-function timer(minut, idTimerElement) {
+function timer(minut, idTimerElement, nameLocal = "timerStart") {
 	const TIMER_DURATION = minut * 60 * 1000; // 20 минут в миллисекундах
 	const timerElement = document.getElementById(`${idTimerElement}`);
 
@@ -15,11 +16,11 @@ function timer(minut, idTimerElement) {
 
 	function startCountdown() {
 		const now = Date.now();
-		let startTime = localStorage.getItem("timerStart");
+		let startTime = localStorage.getItem(nameLocal);
 
 		if (!startTime || now - startTime > TIMER_DURATION) {
 			startTime = now;
-			localStorage.setItem("timerStart", startTime);
+			localStorage.setItem(nameLocal, startTime);
 		}
 
 		function updateTimer() {
@@ -44,4 +45,5 @@ function timer(minut, idTimerElement) {
 	}
 }
 
-timer(20, "timer");
+timer(20, "timer", "timerStart");
+timer(20, "timer-2", "timerStart-2");

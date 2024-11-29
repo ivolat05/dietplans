@@ -32,6 +32,10 @@ const reviewsSwiperConfig = {
 	slidesPerView: 4,
 	spaceBetween: 10,
 	loop: true,
+	preventClicks: true,
+	threshold: 15,
+	touchRatio: 0.3,
+	preventClicksPropagation: false,
 	navigation: {
 		nextEl: ".reviews__slide-prev",
 		prevEl: ".reviews__slide-next",
