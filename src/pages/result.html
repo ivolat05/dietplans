@@ -12,7 +12,7 @@
 	if (savedData) {
 		const parserData = JSON.parse(savedData);
 		quizData = { ...parserData }
-		localStorage.removeItem("quizData");
+		//	localStorage.removeItem("quizData");
 	} else {
 		const link = "step.html";
 		window.location.href = link;
@@ -132,6 +132,14 @@
 
 	<script>
 		renderCalculations(quizData)
+		const btn = document.querySelector(".access__form-btn");
+		btn.addEventListener("click", () => {
+			const wrapp = btn.closest(".access__form");
+			const inputs = wrapp.querySelectorAll("input");
+			inputs.forEach(input => {
+				console.log(`${input.name} = ${input.value}`)
+			});
+		})
 	</script>
 </body>
 
